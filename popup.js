@@ -2,8 +2,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //load up saved value
   var textarea = document.getElementById('content-text');
-  chrome.storage.sync.get('value', function(result) {
-    textarea.textContent = result.value;
+  var title = ''; 
+  var email = ''; 
+
+  chrome.storage.sync.get({
+    title: 'Jot message', 
+    email: '',
+    value: ''
+  }, function(msg) {
+    // alert(JSON.stringify(msg)); 
+    title = msg.title; 
+    email = msg.email; 
+    textarea.textContent = msg.value;
   });
   textarea.focus();
 
@@ -15,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (e.ctrlKey) {
         e.preventDefault();
 
-        mailToSelf(val, "zhukeepa@gmail.com"); 
+        mailToSelf(val, title, email); 
         textarea.value = "";
         textarea.focus();
       }
@@ -23,11 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function mailToSelf(text, email) { 
+function mailToSelf(text, subject, email) { 
   data = { "mail": { "to": email,
                    "body": text,
-                   "subject": "" }};
+                   "subject": subject }};
   url = "http://jot-mailer.herokuapp.com/send_mail"; 
+
+  if (email == '') {
+    alert("You must specify an email address on the options page!"); 
+  }
 
   $.ajax({
     type: "POST",
@@ -35,4 +49,10 @@ function mailToSelf(text, email) {
     data: data,
     dataType: "text"
   });
+
+  var status = document.getElementById('status');
+  status.textContent = 'Message sent!';
+  setTimeout(function() {
+    status.textContent = '';
+  }, 2000);
 }
