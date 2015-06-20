@@ -8,5 +8,6 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-  "permissions": ["storage", "http://localhost:3000/*", "jot-mailer.herokuapp.com/*"]
+  "options_page": "options.html",
+  "permissions": ["storage", "http://localhost:3000/*", "http://jot-mailer.herokuapp.com/*"]
 }
