@@ -40,7 +40,7 @@ function mailToSelf(text, subject, email) {
   url = "http://jot-mailer.herokuapp.com/send_mail"; 
 
   if (email == '') {
-    alert("You must specify an email address on the options page!"); 
+    alert("You must specify an email address on the options page! (Right-click the extension and click \"Options\".)"); 
   }
 
   $.ajax({
