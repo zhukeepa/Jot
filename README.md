@@ -1,5 +1,7 @@
 # Jot
 
+https://chrome.google.com/webstore/detail/jot/dhofiojklfehbkladjlmfljpifchcpbg
+
 Chrome extension for taking quick notes unobtrusively. Opens a textbox in the corner of your browser which you can start typing into immediately, and which focuses you back to whatever you were doing before after you close it. Highly recommended to set up a [keyboard shortcut](http://lifehacker.com/add-custom-keyboard-shortcuts-to-chrome-extensions-for-1595322121) for opening+closing it. 
 
 ![](http://snag.gy/NlLkL.jpg)
