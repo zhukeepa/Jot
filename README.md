@@ -4,4 +4,4 @@ Chrome extension for taking quick notes unobtrusively. Opens a textbox in the co
 
 You can use Ctrl+Enter to email yourself the contents of the textbox. Set your email in the options page (right-click the Jot icon and select "Options"). 
 
-Note: all your emails get sent through jot.mailer@gmail.com, a Gmail account I own. I run scheduled scripts to clear all sent messages and never actually sign into the account myself, but I would still caution against using this extension for sensitive information. Email sent through a [jot-mailer.herokuapp.com](Rails server on Heroku), source code [https://github.com/zhukeepa/jot-mailer](here).
+Note: all your emails get sent through jot.mailer@gmail.com, a Gmail account I own. I run scheduled scripts to clear all sent messages and never actually sign into the account myself, but I would still caution against using this extension for sensitive information. Email sent through a [http://jot-mailer.herokuapp.com](Rails server on Heroku), source code [http://github.com/zhukeepa/jot-mailer](here).
